@@ -15,12 +15,11 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
-
   //creating a method to change screen
-  changeScreen(){
-    Future.delayed(Duration(seconds: 3),(){
+  changeScreen() {
+    Future.delayed(Duration(seconds: 10), () {
       //using getx method
-      Get.to(()=>LoginScreen);
+      Get.to(() => const LoginScreen());
     });
   }
 
@@ -31,10 +30,21 @@ class _SplashScreenState extends State<SplashScreen> {
     super.initState();
   }
 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        actions: [
+          TextButton(
+              onPressed: () {
+                Get.to(() => const LoginScreen());
+              },
+              child: Text(
+                "Skip",
+                style: TextStyle(fontSize: 17, color: Colors.white),
+              ))
+        ],
+      ),
       backgroundColor: Colors.red,
       body: Center(
         child: Column(
@@ -48,13 +58,15 @@ class _SplashScreenState extends State<SplashScreen> {
             ),
             40.heightBox,
             appLogoWidget(),
-            20.heightBox,//sizedbox
+            20.heightBox, //sizedbox
             Text(
               "E-Mart",
               style: TextStyle(
                   fontFamily: bold, fontSize: 20, color: Colors.white),
             ),
-            SizedBox(height: 5,),
+            SizedBox(
+              height: 5,
+            ),
             appversion.text.white.fontFamily(semibold).make(),
             Spacer(),
             credits.text.white.fontFamily(semibold).make(),

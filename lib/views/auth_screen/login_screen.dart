@@ -8,6 +8,7 @@ import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import '../../widgets_common/custom_button.dart';
 import '../../widgets_common/custom_textfield.dart';
+import '../Home_screen/home.dart';
 import 'forgetPassword_screen.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -50,7 +51,9 @@ class LoginScreen extends StatelessWidget {
                             title: login,
                             color: Colors.red,
                             textcolor: Colors.white,
-                            onPress: () {})),
+                            onPress: () {
+                              Get.to(()=>Home());
+                            })),
                     10.heightBox,
                     Text(
                       createnewaccount,

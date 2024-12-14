@@ -101,7 +101,9 @@ class _SignupScreenState extends State<SignupScreen> {
                             title: singup,
                             color: isCheck == true ? Colors.red : Colors.grey,
                             textcolor: Colors.white,
-                            onPress: () {})),
+                            onPress: () {
+                              Get.back();
+                            })),
                     10.heightBox,
                     GestureDetector(
                       onTap: (){

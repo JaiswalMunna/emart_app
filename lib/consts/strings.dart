@@ -17,3 +17,7 @@ const loginwith="Log in with";
 const privacyPolicy="Privacy and Policy";
 const termsAndCondition="Terms and Conditions";
 const alreadyHaveAnAccount="Already Have an Account?";
+const home="Home";
+const categories="Categories";
+const cart="Cart";
+const account="Account";

@@ -18,7 +18,7 @@ Widget customTextField({String? title, String? hint,controller}) {
             fontFamily: semibold,color: textfieldGrey,
           ),
           isDense: true,
-          fillColor: Colors.grey,
+          fillColor: Colors.white24,
           filled: true,
           border: InputBorder.none,
           focusedBorder: OutlineInputBorder(

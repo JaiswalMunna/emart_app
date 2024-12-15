@@ -2,6 +2,10 @@ import 'package:eecm/consts/consts.dart';
 import 'package:eecm/views/controllers/home_controller.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
+import '../cart_screen/cart_screen.dart';
+import '../category_screen/category_screen.dart';
+import '../profile_screen/profile_screen.dart';
+import 'home_screen.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -44,10 +48,10 @@ class _HomeState extends State<Home> {
     ];
 
     var navBody=[
-      Container(color: Colors.blue,),
-      Container(color: Colors.amber,),
-      Container(color: Colors.purple,),
-      Container(color: Colors.cyan,),
+      HomeScreen(),
+      CategoryScreen(),
+      CartScreen(),
+      ProfileScreen(),
     ];
 
     return Scaffold(

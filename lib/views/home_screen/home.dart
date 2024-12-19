@@ -1,7 +1,6 @@
 import 'package:eecm/consts/consts.dart';
 import 'package:eecm/views/controllers/home_controller.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 import '../cart_screen/cart_screen.dart';
 import '../category_screen/category_screen.dart';
 import '../profile_screen/profile_screen.dart';

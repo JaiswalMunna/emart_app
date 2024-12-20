@@ -1,15 +1,15 @@
 import 'package:eecm/consts/consts.dart';
 import 'package:eecm/consts/lists.dart';
 
-Widget featuredButton() {
+Widget featuredButton({icon,String? title}) {
   return Row(
     children: [
-      Image.asset(imgS1,width: 40,fit: BoxFit.fill,),
+      Image.asset(icon,width: 40,fit: BoxFit.fill,),
       10.widthBox,
       Text(
-        womenDress,
+        title!,
         style: TextStyle(fontFamily: semibold, color: darkFontGrey),
       )
     ],
-  ).box.white.roundedSM.outerShadowSm.make();
+  ).box.width(200).margin(EdgeInsets.symmetric(horizontal: 4)).white.padding(EdgeInsets.all(4)).roundedSM.outerShadowSm.make();
 }

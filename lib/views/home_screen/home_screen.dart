@@ -127,17 +127,20 @@ class HomeScreen extends StatelessWidget {
                     ),
                   ),
                   10.heightBox,
-                  Row(
-                    children: List.generate(
-                      3,
-                      (index) => Column(
-                        children: [
-                          featuredButton(),
-                          10.heightBox,
-                          featuredButton(),
-                        ],
-                      ),
-                    ).toList(),
+                  SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: Row(
+                      children: List.generate(
+                        3,
+                        (index) => Column(
+                          children: [
+                            featuredButton(title: featuredTitles1[index],icon: featuredList1[index]),
+                            10.heightBox,
+                            featuredButton(title: featuredTitles2[index],icon: featuredList2[index]),
+                          ],
+                        ),
+                      ).toList(),
+                    ),
                   ),
                 ],
               ),

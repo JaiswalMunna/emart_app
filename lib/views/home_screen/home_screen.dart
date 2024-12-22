@@ -134,12 +134,49 @@ class HomeScreen extends StatelessWidget {
                         3,
                         (index) => Column(
                           children: [
-                            featuredButton(title: featuredTitles1[index],icon: featuredList1[index]),
+                            featuredButton(
+                                title: featuredTitles1[index],
+                                icon: featuredList1[index]),
                             10.heightBox,
-                            featuredButton(title: featuredTitles2[index],icon: featuredList2[index]),
+                            featuredButton(
+                                title: featuredTitles2[index],
+                                icon: featuredList2[index]),
                           ],
                         ),
                       ).toList(),
+                    ),
+                  ),
+
+                  //featured products
+                  20.heightBox,
+                  Container(
+                    padding: EdgeInsets.all(12),
+                    width: double.infinity,
+                    decoration: BoxDecoration(color: Colors.red),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          featuredProducts,
+                          style: TextStyle(
+                              fontFamily: semibold,
+                              fontSize: 16,
+                              color: Colors.white),
+                        ),
+                        Row(
+                          children: List.generate(
+                              6,
+                              (index) => Column(
+                                    children: [
+
+                                    ],
+                                  )
+                                      .box
+                                      .white
+                                      .padding(EdgeInsets.all(8))
+                                      .make()),
+                        ),
+                      ],
                     ),
                   ),
                 ],

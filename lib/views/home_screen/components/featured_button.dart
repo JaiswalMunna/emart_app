@@ -1,5 +1,4 @@
 import 'package:eecm/consts/consts.dart';
-import 'package:eecm/consts/lists.dart';
 
 Widget featuredButton({icon,String? title}) {
   return Row(

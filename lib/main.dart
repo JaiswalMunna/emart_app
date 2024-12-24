@@ -1,6 +1,5 @@
 import 'package:eecm/consts/consts.dart';
 import 'package:eecm/views/splash_scren/splash_screen.dart';
-import 'package:flutter/material.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 
 void main() {

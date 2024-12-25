@@ -250,20 +250,25 @@ class HomeScreen extends StatelessWidget {
                             Text(
                               "Laptop 4gb",
                               style: TextStyle(
-                                  fontFamily: semibold,
-                                  color: darkFontGrey),
+                                  fontFamily: semibold, color: darkFontGrey),
                             ),
                             10.heightBox,
                             Text(
                               "\$600",
                               style: TextStyle(
-                                fontSize: 16,
+                                  fontSize: 16,
                                   fontFamily: bold,
                                   color: Colors.red),
                             ),
                             10.heightBox,
                           ],
-                        ).box.rounded.white.margin(EdgeInsets.symmetric(horizontal: 4)).padding(EdgeInsets.all(12)).make();
+                        )
+                            .box
+                            .rounded
+                            .white
+                            .margin(EdgeInsets.symmetric(horizontal: 4))
+                            .padding(EdgeInsets.all(12))
+                            .make();
                       })
                 ],
               ),

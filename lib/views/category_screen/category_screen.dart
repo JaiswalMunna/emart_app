@@ -50,7 +50,7 @@ class CategoryScreen extends StatelessWidget {
                     .outerShadowSm
                     .make()
                     .onTap(() {
-                  Get.to(() => CategoriesDatails(title: categoriesList[index]));
+                  Get.to(() => CategoriesDetails(title: categoriesList[index]));
                 });
               }),
         ),

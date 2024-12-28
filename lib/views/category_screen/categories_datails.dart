@@ -93,6 +93,7 @@ class CategoriesDetails extends StatelessWidget {
                           .onTap(() {
                         Get.to(() => ItemsDetails(
                               title: categoriesList[index],
+                              // title: "Dummy Page",
                             ));
                       });
                     }),

@@ -90,7 +90,7 @@ class _ItemsDetailsState extends State<ItemsDetails> {
                   ),
                   10.heightBox,
                   Text(
-                    "\$30,00,000",
+                    "\$3000",
                     style: TextStyle(
                         fontFamily: bold, fontSize: 18, color: Colors.red),
                   ),

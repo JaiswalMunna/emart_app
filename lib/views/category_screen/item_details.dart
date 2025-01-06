@@ -1,5 +1,6 @@
 import 'package:eecm/consts/consts.dart';
 
+import '../../consts/lists.dart';
 import '../../widgets_common/custom_button.dart';
 
 class ItemsDetails extends StatefulWidget {
@@ -147,7 +148,8 @@ class _ItemsDetailsState extends State<ItemsDetails> {
                                       .size(40, 40)
                                       .roundedFull
                                       .color(Vx.randomPrimaryColor)
-                                      .margin(EdgeInsets.symmetric(horizontal: 4))
+                                      .margin(
+                                          EdgeInsets.symmetric(horizontal: 4))
                                       .make())),
                         ],
                       ).box.padding(EdgeInsets.all(8)).make(),
@@ -157,23 +159,118 @@ class _ItemsDetailsState extends State<ItemsDetails> {
                         children: [
                           SizedBox(
                             width: 100,
-                            child: "Color:".text.color(textfieldGrey).make(),
+                            child: "Quantity:".text.color(textfieldGrey).make(),
                           ),
                           Row(
-                              children: [
-                                IconButton(onPressed: (){}, icon: Icon(Icons.remove)),
-                                "0".text.size(16).color(darkFontGrey).fontFamily(bold).make(),
-                                IconButton(onPressed: (){}, icon: Icon(Icons.add)),
-                                10.widthBox,
-                                "(0 Available)".text.color(textfieldGrey).make(),
-                              ],
+                            children: [
+                              IconButton(
+                                  onPressed: () {}, icon: Icon(Icons.remove)),
+                              "0"
+                                  .text
+                                  .size(16)
+                                  .color(darkFontGrey)
+                                  .fontFamily(bold)
+                                  .make(),
+                              IconButton(
+                                  onPressed: () {}, icon: Icon(Icons.add)),
+                              10.widthBox,
+                              "(0 Available)".text.color(textfieldGrey).make(),
+                            ],
                           ),
                         ],
                       ).box.padding(EdgeInsets.all(8)).make(),
 
-
+                      //total
+                      Row(
+                        children: [
+                          SizedBox(
+                            width: 100,
+                            child: "Total:".text.color(textfieldGrey).make(),
+                          ),
+                          "\$0.00"
+                              .text
+                              .color(Colors.red)
+                              .size(16)
+                              .fontFamily(bold)
+                              .make(),
+                        ],
+                      ).box.padding(EdgeInsets.all(8)).make(),
                     ],
                   ).box.white.shadowSm.make(),
+
+                  10.heightBox,
+                  //description
+                  "Description"
+                      .text
+                      .color(darkFontGrey)
+                      .fontFamily(bold)
+                      .make(),
+                  10.heightBox,
+                  "This is a dummy page and dummy description here"
+                      .text
+                      .color(darkFontGrey)
+                      .make(),
+                  10.heightBox,
+                  ListView(
+                    physics: NeverScrollableScrollPhysics(),
+                    shrinkWrap: true,
+                    children: List.generate(
+                      itemDetailsButtonList.length,
+                      (index) => ListTile(
+                        title:
+                            itemDetailsButtonList[index].text.semiBold.make(),
+                        trailing: Icon(Icons.arrow_forward_rounded),
+                      ),
+                    ),
+                  ),
+                  10.heightBox,
+                  //products
+                  productyoumay.text
+                      .color(darkFontGrey)
+                      .fontFamily(bold)
+                      .size(16)
+                      .make(),
+                  10.heightBox,
+                  SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: Row(
+                      children: List.generate(
+                          6,
+                              (index) => Column(
+                            crossAxisAlignment:
+                            CrossAxisAlignment.start,
+                            children: [
+                              Image.asset(
+                                imgP1,
+                                width: 150,
+                                fit: BoxFit.cover,
+                              ),
+                              10.heightBox,
+                              Text(
+                                "Laptop 4gb",
+                                style: TextStyle(
+                                    fontFamily: semibold,
+                                    color: darkFontGrey),
+                              ),
+                              10.heightBox,
+                              Text(
+                                "\$600",
+                                style: TextStyle(
+                                    fontFamily: bold,
+                                    color: Colors.red),
+                              ),
+                            ],
+                          )
+                              .box
+                              .rounded
+                              .margin(
+                              EdgeInsets.symmetric(horizontal: 4))
+                              .white
+                              .padding(EdgeInsets.all(8))
+                              .make()),
+                    ),
+                  ),
+                  10.heightBox,
                 ],
               ),
             ),
@@ -187,6 +284,7 @@ class _ItemsDetailsState extends State<ItemsDetails> {
                 textcolor: whiteColor,
                 title: "Add to Cart"),
           ),
+          5.heightBox,
         ],
       ),
     );

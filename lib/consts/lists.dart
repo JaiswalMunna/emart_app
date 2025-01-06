@@ -38,3 +38,6 @@ const categoriesImages = [
 
 
 const itemDetailsButtonList=[videos,reviews, sellerPo, returnPo, supportPo];
+
+const profileButtonsList=[wishlist,orders, message];
+const profileIconsList=[icOrder,icOrder,icMessages];

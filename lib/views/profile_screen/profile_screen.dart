@@ -44,7 +44,7 @@ class ProfileScreen extends StatelessWidget {
                             .fontFamily(semibold)
                             .size(16)
                             .make(),
-                        "NO user detail"
+                        "user@gmail.com"
                             .text
                             .color(Colors.white)
                             .fontFamily(semibold)

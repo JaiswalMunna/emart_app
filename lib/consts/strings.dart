@@ -19,6 +19,8 @@ const termsAndCondition = "Terms and Conditions";
 const alreadyHaveAnAccount = "Already Have an Account?";
 const home = "Home";
 const categories = "Categories";
+const loggedIn="Logged in Successfully";
+const loggedOut="Logged out Successfully";
 const cart = "Cart";
 const account = "Account";
 

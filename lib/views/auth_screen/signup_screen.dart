@@ -1,10 +1,12 @@
 import 'package:eecm/consts/consts.dart';
+import 'package:eecm/views/controllers/auth_controller.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import '../../widgets_common/applogo_widget.dart';
 import '../../widgets_common/background_widget.dart';
 import '../../widgets_common/custom_button.dart';
 import '../../widgets_common/custom_textfield.dart';
+import '../Home_screen/home.dart';
 
 class SignupScreen extends StatefulWidget {
   const SignupScreen({super.key});
@@ -15,6 +17,13 @@ class SignupScreen extends StatefulWidget {
 
 class _SignupScreenState extends State<SignupScreen> {
   bool? isCheck = false;
+  var controller = Get.put(AuthController());
+
+  //text controller
+  var nameController = TextEditingController();
+  var emailController = TextEditingController();
+  var passwordController = TextEditingController();
+  var passwordRetypeController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -36,14 +45,25 @@ class _SignupScreenState extends State<SignupScreen> {
                 15.heightBox,
                 Column(
                   children: [
-                    customTextField(title: name, hint: nameHint),
-                    10.heightBox,
-                    customTextField(title: email, hint: emailHint),
-                    10.heightBox,
-                    customTextField(title: password, hint: passwordHint),
+                    customTextField(
+                        title: name,
+                        hint: nameHint,
+                        controller: nameController,isPass: false),
                     10.heightBox,
                     customTextField(
-                        title: confirmPassword, hint: confirmPasswordHint),
+                        title: email,
+                        hint: emailHint,
+                        controller: emailController,isPass: false),
+                    10.heightBox,
+                    customTextField(
+                        title: password,
+                        hint: passwordHint,
+                        controller: passwordController,isPass: true),
+                    10.heightBox,
+                    customTextField(
+                        title: confirmPassword,
+                        hint: confirmPasswordHint,
+                        controller: passwordRetypeController,isPass: true),
                     10.heightBox,
                     Row(
                       children: [
@@ -101,12 +121,33 @@ class _SignupScreenState extends State<SignupScreen> {
                             title: singup,
                             color: isCheck == true ? Colors.red : Colors.grey,
                             textcolor: Colors.white,
-                            onPress: () {
-                              Get.back();
+                            onPress: () async {
+                              if (isCheck != false) {
+                                try {
+                                  await controller
+                                      .signupMethod(
+                                          context: context,
+                                          email: emailController.text,
+                                          password: passwordController.text)
+                                      .then((value) {
+                                    return controller.storeUserData(
+                                      email: emailController.text,
+                                      password: passwordController.text,
+                                      name: nameController.text
+                                    );
+                                  }).then((value){
+                                    VxToast.show(context, msg: loggedIn);
+                                    Get.offAll(()=> Home());
+                                  });
+                                } catch (e) {
+                                  auth.signOut();
+                                  VxToast.show(context, msg: e.toString());
+                                }
+                              }
                             })),
                     10.heightBox,
                     GestureDetector(
-                      onTap: (){
+                      onTap: () {
                         Get.back();
                       },
                       child: Row(

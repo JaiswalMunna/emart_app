@@ -1,6 +1,6 @@
 import 'package:eecm/consts/consts.dart';
 
-Widget customTextField({String? title, String? hint,controller}) {
+Widget customTextField({String? title, String? hint,controller,isPass}) {
   return Column(
     crossAxisAlignment: CrossAxisAlignment.start,
     children: [
@@ -12,6 +12,8 @@ Widget customTextField({String? title, String? hint,controller}) {
         height: 5,
       ),
       TextFormField(
+        obscureText: isPass,
+        controller: controller,
         decoration: InputDecoration(
           hintText: hint,
           hintStyle: TextStyle(

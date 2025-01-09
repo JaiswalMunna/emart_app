@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "911174430314",
+    "project_id": "emartshopping-abf77",
+    "storage_bucket": "emartshopping-abf77.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:911174430314:android:5bfe8f438b54c4bcec2413",
+        "android_client_info": {
+          "package_name": "com.example.eecm"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB4eutJ74siiH4PtNUcVp0_rXOBkTjXleg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
